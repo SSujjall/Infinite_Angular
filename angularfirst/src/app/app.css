@@ -1,0 +1,15 @@
+.active {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.underline {
+    text-decoration: underline;
+}

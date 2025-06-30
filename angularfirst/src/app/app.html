@@ -1,0 +1,8 @@
+<div #ourDiv>HELLOWORLD</div>
+
+<app-child [random]="'hello'" [value2]="'hello2" (statusEmitter)="handleEmittedStatus($event)">
+  <footer class="footer"></footer>
+  <p>Hello from parent to child</p>
+  <header class="header"></header>
+  <p class="header"></p>
+</app-child>
