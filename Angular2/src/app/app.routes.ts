@@ -4,6 +4,7 @@ import { User } from './components/user/user';
 import { AddUser } from './components/add-user/add-user';
 import { Random1 } from './components/random1/random1';
 import { Random2 } from './components/random2/random2';
+import { authGuard } from './guard/auth-guard';
 
 export const routes: Routes = [
     {
@@ -18,6 +19,8 @@ export const routes: Routes = [
     {
         path: "users/user/:username",
         component: User,
+        canActivate: [authGuard],
+        // canActivate: [AuthGuard],
         children: [
             {
                 path: "random1",
