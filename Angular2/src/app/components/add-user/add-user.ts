@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-user',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, ReactiveFormsModule],
   templateUrl: './add-user.html',
   styleUrl: './add-user.css'
 })
@@ -17,5 +17,15 @@ export class AddUser {
 
   onSubmit(form: any) {
     console.log(form, "form")
+  }
+
+
+  userForm = new FormGroup({
+    username: new FormControl("", [Validators.required, Validators.minLength(3)]),
+    image: new FormControl(""),
+  })
+
+  submitForm() {
+    console.log(this.userForm, "submit")
   }
 }
